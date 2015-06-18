@@ -206,6 +206,9 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
                 if ([imageData length] >= [kPNGSignatureData length]) {
                     imageIsPng = ImageDataHasPNGPreffix(imageData);
                 }
+                
+                // TODO: DZAMIR'S HACK TO ALWAYS FORCE PNG TRANSPARENCY 
+                imageIsPng = YES;
 
                 if (imageIsPng) {
                     data = UIImagePNGRepresentation(image);
